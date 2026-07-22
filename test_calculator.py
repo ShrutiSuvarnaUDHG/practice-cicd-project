@@ -23,9 +23,6 @@ def test_divide():
         divide(10, 0)
 
 
- def power(base, exponent):
-     return base ** exponent
-
 def test_power():
     assert power(2, 3) == 8
     assert power(5, 0) == 1
