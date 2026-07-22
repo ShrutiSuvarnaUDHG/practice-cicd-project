@@ -25,3 +25,10 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+      - name: Use the secret
+        env:
+          API_KEY: ${{ secrets.PRACTICE_API_KEY }}
+        run: echo "Using API key that starts with ${API_KEY:0:3}..."
+        
+        
