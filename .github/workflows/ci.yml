@@ -53,5 +53,14 @@ jobs:
 
       - name: Run flake8
         run: flake8 calculator.py test_calculator.py --max-line-length=100
-        
-        
+
+  deploy:
+    needs: [build-and-test, lint]
+    runs-on: ubuntu-latest
+    environment: production
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Deploy (pretend)
+        run: echo "Deploying to production..."
+
