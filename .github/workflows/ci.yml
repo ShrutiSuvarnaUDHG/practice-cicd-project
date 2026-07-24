@@ -1,6 +1,5 @@
 name: CI
 
-# Milestone 1: run automatically on every push and every pull request
 on:
   push:
     branches: [main, develop]
@@ -36,8 +35,8 @@ jobs:
         with:
           name: coverage-report
           path: htmlcov/
-        
-    lint:
+
+  lint:
     runs-on: ubuntu-latest
 
     steps:
